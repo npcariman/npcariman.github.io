@@ -18,7 +18,16 @@
     <p style="color:#7b7d7d;"> "El amor se descubre a través de la práctica de amar y no de las palabras" - Paulo Coelho </p>
 
     <p style="color:#7b7d7d;"> Esta página también te avisa si Nawel sigue siendo ingeniero </p>
-    <p style="color:#7b7d7d;"> Estado: Nawel sigue siendo ingeniero </p>
+    <p style="color:#7b7d7d;"> Estado: Nawel sigue siendo ingeniero</p>
+
+    <p style="color:#7b7d7d;"> Visitas: <span id="visitas">…</span></p>
+
+    <script>
+        fetch('contador.php')
+            .then(r => r.json())
+            .then(d => document.getElementById('visitas').textContent = d.visitas ?? 'n/d')
+            .catch(() => document.getElementById('visitas').textContent = 'n/d');
+    </script>
 </body>
 </html>
 
